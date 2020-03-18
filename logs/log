@@ -1,0 +1,63 @@
+ERROR app.py:1975 Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 552, in connect
+    sock = self._connect()
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 609, in _connect
+    raise err
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 597, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python3.7\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python3.7\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Python3.7\lib\site-packages\flask\app.py", line 1969, in finalize_request
+    response = self.process_response(response)
+  File "C:\Python3.7\lib\site-packages\flask\app.py", line 2268, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "C:\Python3.7\lib\site-packages\flask_session\sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "C:\Python3.7\lib\site-packages\redis\client.py", line 1787, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "C:\Python3.7\lib\site-packages\redis\client.py", line 875, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 1185, in get_connection
+    connection.connect()
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 557, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 552, in connect
+    sock = self._connect()
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 609, in _connect
+    raise err
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 597, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python3.7\lib\site-packages\flask\app.py", line 1969, in finalize_request
+    response = self.process_response(response)
+  File "C:\Python3.7\lib\site-packages\flask\app.py", line 2268, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "C:\Python3.7\lib\site-packages\flask_session\sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "C:\Python3.7\lib\site-packages\redis\client.py", line 1787, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "C:\Python3.7\lib\site-packages\redis\client.py", line 875, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 1185, in get_connection
+    connection.connect()
+  File "C:\Python3.7\lib\site-packages\redis\connection.py", line 557, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£.
+INFO _internal.py:113 127.0.0.1 - - [13/Mar/2020 16:15:06] "[35m[1mGET / HTTP/1.1[0m" 500 -
